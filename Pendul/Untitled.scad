@@ -10,7 +10,7 @@ R1=5; // Ring diameter
 R2=3; // Ring opening
 N=3; // Number of rings
 H2=20; // height of support
-
+L1 = B*(1+2*H2/H); // Length of support
 module leg(h1,d1,dx1,dy1) {
     // h1: length in mm
     // d1: diameter in mm
@@ -52,9 +52,17 @@ translate([S,S+D/2,Hp-R1/2]){ // Rings
 }
 translate([S/H*H2,S/H*H2,H2]){ // Support
     rotate([0,90,0])    
-        cylinder(h=B*(1+2*H2/H),d=D);
+        cylinder(h=L1,d=D);
 }
 translate([S/H*H2,2*S-S/H*H2,H2]){
     rotate([0,90,0])    
-        cylinder(h=B*(1+2*H2/H),d=D);
+        cylinder(h=L1,d=D);
+}
+translate([S/H*H2,S/H*H2,H2]) { // Short support
+    rotate([-90,0,0])
+        cylinder(h=2*(S-S/H*H2), d=D);
+}
+translate([S/H*H2+L1,S/H*H2,H2]) { // Short support
+    rotate([-90,0,0])
+        cylinder(h=2*(S-S/H*H2), d=D);
 }
