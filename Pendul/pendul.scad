@@ -8,7 +8,7 @@ S=10; // slant of legs
 Hp = H*(1-sin(S/H+D/2)); // projected height
 R1=5; // Ring diameter
 R2=3; // Ring opening
-N=3; // Number of rings
+N=4; // Number of rings
 H2=20; // height of support
 L1 = B*(1+2*H2/H); // Length of support
 module leg(h1,d1,dx1,dy1) {
