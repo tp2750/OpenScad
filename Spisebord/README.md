@@ -1,7 +1,9 @@
 # Spisebord
+
 Camp dining table.
+
 Based on 
-![img/kortoggododtbord.png]
+![Kort&Godt bord](img/kortoggododtbord.png)
 
 ## Leg distance 2*100cm, crossing height 150 cm
 
