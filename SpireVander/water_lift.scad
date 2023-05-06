@@ -2,15 +2,16 @@ $fa = 1;
 $fs = 0.1;
 // OBS: inner should be 8.9 mm. 
 // d1/12, t1=1.35 => 9.3, bu apparently still too rarrow
-module inner(h1, h2, w1, d1, t1) {
+module inner(h1, h2, w1, d1, t1,l1) {
     // h1: cylinder height 14.3
     // h2: dent height 3.25
     // w1: dent weith 3.25
     // d1: diameter (outer) 12
     // t1: wall thickness 1.35
+    // l1: loft thickness
     difference(){
-        cylinder(h1+.8, d1/2, d1/2);
-        translate([0,0,-5])
+        cylinder(h1, d1/2, d1/2);
+        translate([0,0,l1])
             cylinder(h1+10, d1/2-t1, d1/2-t1);
         translate([0,0,h1])
             cube([d1,w1,2*h2], center=true);
@@ -26,7 +27,6 @@ module inner(h1, h2, w1, d1, t1) {
     }
 }
 
-inner(14.3, 3.25, 3.25, 12, 1.35);
 
 module outer(h1=5,h2=15,d1=12,d2=23, t1=1, w1=1.1) {
     // h1: solid height 5
@@ -53,4 +53,5 @@ module outer(h1=5,h2=15,d1=12,d2=23, t1=1, w1=1.1) {
     }
 }
 
-outer();
+inner(15, 2.25, 3.25, 12, 1.35,1);
+outer(5,15,12,23, 1, 1.1);
