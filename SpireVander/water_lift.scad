@@ -5,7 +5,7 @@ $fs = 0.1;
 module inner(h1, h2, w1, d1, t1,l1) {
     // h1: cylinder height 14.3
     // h2: dent height 3.25
-    // w1: dent weith 3.25
+    // w1: dent width 3.25
     // d1: diameter (outer) 12
     // t1: wall thickness 1.35
     // l1: loft thickness
@@ -54,4 +54,4 @@ module outer(h1=5,h2=15,d1=12,d2=23, t1=1, w1=1.1) {
 }
 
 inner(15, 2.25, 3.25, 12, 1.35,1);
-outer(5,15,12,23, 1, 1.1);
+outer(5,21,12,23, 1, 1.1);
